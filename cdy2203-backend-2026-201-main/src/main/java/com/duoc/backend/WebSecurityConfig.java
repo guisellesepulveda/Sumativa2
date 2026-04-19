@@ -22,8 +22,6 @@ class WebSecurityConfig{
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
 
         http
-                .csrf((csrf) -> csrf
-                        .disable())
                 .authorizeHttpRequests( authz -> authz
                         .requestMatchers(HttpMethod.POST, Constants.LOGIN_URL).permitAll()
                         .requestMatchers(HttpMethod.GET, Constants.LOGIN_URL).permitAll()
